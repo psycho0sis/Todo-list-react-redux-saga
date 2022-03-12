@@ -1,0 +1,43 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #ddf2f8;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  &__text {
+    width: 70%;
+    &:checked {
+      text-decoration: line-through;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #3b8ea6;
+    transition: 0.3s all ease;
+    &:hover {
+      background-color: #1b6b82;
+      transform: scale(0.97);
+    }
+  }
+}
+
+.pink {
+  background-color: #954998;
+}
