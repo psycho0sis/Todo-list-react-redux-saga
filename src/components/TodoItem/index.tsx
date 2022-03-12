@@ -13,6 +13,7 @@ interface Props {
 }
 
 export const TodoItem: React.FC<Props> = ({ todo }) => {
+  const { id, title, completed } = todo;
   const dispatch = useDispatch();
 
   const onToggleTodo = (id: number) => {
@@ -30,14 +31,14 @@ export const TodoItem: React.FC<Props> = ({ todo }) => {
         <input
           className='todoItem__checkbox'
           type='checkbox'
-          onChange={() => onToggleTodo(todo.id)}
-          checked={todo.completed}
+          onChange={() => onToggleTodo(id)}
+          checked={completed}
         />
       </div>
-      <p className={"todoItem__text"}>{todo.title}</p>
+      <p className={"todoItem__text"}>{title}</p>
       <div className='todoItem__buttons'>
         <UpdateButton />
-        <RemoveButton id={todo.id} />
+        <RemoveButton id={id} />
       </div>
     </li>
   );

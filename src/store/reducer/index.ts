@@ -1,11 +1,12 @@
 import { AnyAction } from "redux";
+
 import { Todo } from "store/types";
 import {
   ADD_TODO,
   REMOVE_TODO,
   GET_TODOS,
   TOGGLE_TODO,
-} from "../actions/actionsType";
+} from "store/actions/actionsTypes";
 
 const reducer = (state: Todo[] = [], action: AnyAction) => {
   switch (action.type) {
@@ -13,11 +14,9 @@ const reducer = (state: Todo[] = [], action: AnyAction) => {
       return [...state, ...action.payload];
     }
     case ADD_TODO: {
-      // console.log(state, action.payload);
       return [...state, action.payload];
     }
     case REMOVE_TODO: {
-      // console.log(state.filter((todo) => todo.id !== action.payload));
       return [...state.filter((todo) => todo.id !== action.payload)];
     }
     case TOGGLE_TODO: {

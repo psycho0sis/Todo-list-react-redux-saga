@@ -1,12 +1,8 @@
 import { TodoItem } from "components/TodoItem";
 
-import { Todo } from "store/types";
+import { ITodoList, Todo } from "store/types";
 
-interface Props {
-  todos: Todo[];
-}
-
-export const TodoList: React.FC<Props> = ({ todos }) => {
+export const TodoList: React.FC<ITodoList> = ({ todos }) => {
   return (
     <ul>
       {todos &&

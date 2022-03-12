@@ -6,7 +6,7 @@ import {
   TOGGLE_TODO,
   REMOVE_TODO,
   UPDATE_TODO,
-} from "./actionsType";
+} from "./actionsTypes";
 
 export function getTodos(payload: Todo[]) {
   return { type: GET_TODOS, payload };
