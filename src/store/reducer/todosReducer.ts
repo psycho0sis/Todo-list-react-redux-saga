@@ -1,14 +1,16 @@
 import { AnyAction } from "redux";
 
-import { Todo } from "store/types";
+import { ITodo } from "types";
 import {
   ADD_TODO,
   REMOVE_TODO,
   GET_TODOS,
   TOGGLE_TODO,
+  UPDATE_TODO,
+  IS_EDIT,
 } from "store/actions/actionsTypes";
 
-const reducer = (state: Todo[] = [], action: AnyAction) => {
+export const todosReducer = (state: ITodo[] = [], action: AnyAction) => {
   switch (action.type) {
     case GET_TODOS: {
       return [...state, ...action.payload];
@@ -26,9 +28,19 @@ const reducer = (state: Todo[] = [], action: AnyAction) => {
           : todo
       );
     }
+    case UPDATE_TODO: {
+      return state.map((todo) =>
+        todo.id === action.payload ? { ...todo, title: action.value } : todo
+      );
+    }
+    case IS_EDIT: {
+      return state.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, isEditing: !todo.isEditing }
+          : todo
+      );
+    }
     default:
       return state;
   }
 };
-
-export default reducer;

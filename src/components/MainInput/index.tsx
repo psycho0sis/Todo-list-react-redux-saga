@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { addTodo } from "store/actions/actions";
 
-import { Todo } from "store/types";
+import { ITodo } from "types";
 
 import "./style.scss";
 
@@ -16,14 +16,18 @@ export const MainInput = () => {
   };
 
   const addBtn = () => {
-    const todo: Todo = {
+    const todo: ITodo = {
       title: value,
       completed: false,
       id: Date.now(),
-      userId: 1,
+      isEditing: false,
     };
+
+    if (value !== "") {
+      dispatch(addTodo(todo));
+    }
+
     setValue("");
-    dispatch(addTodo(todo));
   };
 
   return (

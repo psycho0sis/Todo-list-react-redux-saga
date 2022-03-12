@@ -1,22 +1,17 @@
 import { useDispatch } from "react-redux";
 
 import { removeTodo } from "store/actions/actions";
+import { IId } from "types";
 
-import "./style.scss";
+import "styles.scss";
 
-interface Props {
-  id: number;
-}
-
-export const RemoveButton: React.FC<Props> = ({ id }) => {
+export const RemoveButton: React.FC<IId> = ({ id }) => {
   const dispatch = useDispatch();
 
-  const removeBtn = () => {
-    dispatch(removeTodo(id));
-  };
+  const removeBtn = () => dispatch(removeTodo(id));
 
   return (
-    <button type='button' className='removeButton' onClick={removeBtn}>
+    <button type='button' className='button' onClick={removeBtn}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='30'

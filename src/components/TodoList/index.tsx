@@ -1,13 +1,14 @@
 import { TodoItem } from "components/TodoItem";
 
-import { ITodoList, Todo } from "store/types";
+import { ITodoList, ITodo } from "types";
 
 export const TodoList: React.FC<ITodoList> = ({ todos }) => {
+  console.log("render", todos);
   return (
     <ul>
       {todos &&
-        todos.map((item: Todo) => {
-          return <TodoItem key={item.id} todo={item} />;
+        todos.map((todo: ITodo) => {
+          return <TodoItem key={todo.id} todo={todo} />;
         })}
     </ul>
   );

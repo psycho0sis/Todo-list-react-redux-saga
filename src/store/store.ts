@@ -2,13 +2,14 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "@redux-saga/core";
 
-import reducer from "store/reducer";
+import { todosReducer } from "store/reducer/todosReducer";
+
 import { rootSaga } from "./sagas";
 
 const sagaMiddleWare = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-  todos: reducer,
+  todos: todosReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

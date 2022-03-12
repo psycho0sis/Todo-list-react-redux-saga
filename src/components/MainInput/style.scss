@@ -1,29 +1,40 @@
 .mainInput {
   display: flex;
-  justify-content: space-between;
   gap: 0 20px;
+  justify-content: space-between;
   margin-bottom: 20px;
+
   &__input {
-    width: 100%;
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 10px;
     display: block;
     font-size: 20px;
     padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: #e7e7e7;
+    width: 100%;
+
     &:focus {
       outline: 2px solid #3b8ea6;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+
+      &::-webkit-input-placeholder {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
     }
   }
+
   &__button {
-    display: flex;
     align-items: center;
+    background-color: #3b8ea6;
+    border-radius: 10px;
+    display: flex;
+    height: 50px;
     justify-content: center;
     width: 60px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: #3b8ea6;
     transition: 0.3s all ease;
+
     &:hover {
       background-color: #1b6b82;
       transform: scale(0.97);

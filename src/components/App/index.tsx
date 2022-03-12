@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { MainInput } from "components/MainInput/";
 import { TodoList } from "components/TodoList";
+import { Spinner } from "components/Spinner";
 
 import { RootState } from "store/store";
 
 import "./style.scss";
 
-function App() {
+export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,9 +21,7 @@ function App() {
   return (
     <div className='app'>
       <MainInput />
-      <TodoList todos={todos} />
+      {todos.length ? <TodoList todos={todos} /> : <Spinner />}
     </div>
   );
-}
-
-export default App;
+};
