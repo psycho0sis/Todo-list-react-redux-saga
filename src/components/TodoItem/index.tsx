@@ -1,19 +1,18 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import RemoveButton from "./RemoveButton";
-import UpdateButton from "./UpdateButton";
+import { RemoveButton } from "components/RemoveButton";
+import { UpdateButton } from "components/UpdateButton/";
 
-import { Todo } from "../../store/types";
+import { Todo } from "store/types";
+import { toggleTodo } from "store/actions/actions";
 
 import "./style.scss";
-import { toggleTodo } from "../../store/actions";
-
 interface Props {
   todo: Todo;
 }
 
-const TodoItem: React.FC<Props> = ({ todo }) => {
+export const TodoItem: React.FC<Props> = ({ todo }) => {
   const dispatch = useDispatch();
 
   const onToggleTodo = (id: number) => {
@@ -43,5 +42,3 @@ const TodoItem: React.FC<Props> = ({ todo }) => {
     </li>
   );
 };
-
-export default TodoItem;

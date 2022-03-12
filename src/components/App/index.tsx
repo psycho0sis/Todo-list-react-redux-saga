@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import MainInput from "../MainInput/";
-import TodoList from "../TodoList";
+import { MainInput } from "components/MainInput/";
+import { TodoList } from "components/TodoList";
 
-import { RootState } from "../../store/store";
-import { fetchTodos } from "../../store/asyncActions";
+import { RootState } from "store/store";
+import { fetchTodos } from "store/actions/asyncActions";
 
 import "./style.scss";
 

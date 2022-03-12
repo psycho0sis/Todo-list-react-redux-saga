@@ -1,12 +1,12 @@
-import TodoItem from "../TodoItem";
+import { TodoItem } from "components/TodoItem";
 
-import { Todo } from "../../store/types";
+import { Todo } from "store/types";
 
 interface Props {
   todos: Todo[];
 }
 
-const TodoList: React.FC<Props> = ({ todos }) => {
+export const TodoList: React.FC<Props> = ({ todos }) => {
   return (
     <ul>
       {todos &&
@@ -16,5 +16,3 @@ const TodoList: React.FC<Props> = ({ todos }) => {
     </ul>
   );
 };
-
-export default TodoList;

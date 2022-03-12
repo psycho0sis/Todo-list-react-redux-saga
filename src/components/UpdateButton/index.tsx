@@ -1,8 +1,8 @@
 import "./style.scss";
 
-const UpdateButton = () => {
+export const UpdateButton = () => {
   return (
-    <button type='button' className='todoItem__button pink'>
+    <button type='button' className='updateButton pink'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='30'
@@ -15,5 +15,3 @@ const UpdateButton = () => {
     </button>
   );
 };
-
-export default UpdateButton;

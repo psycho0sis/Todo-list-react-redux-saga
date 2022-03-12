@@ -1,6 +1,11 @@
 import { AnyAction } from "redux";
-import { Todo } from "./types";
-import { ADD_TODO, REMOVE_TODO, GET_TODOS, TOGGLE_TODO } from "./actions";
+import { Todo } from "store/types";
+import {
+  ADD_TODO,
+  REMOVE_TODO,
+  GET_TODOS,
+  TOGGLE_TODO,
+} from "../actions/actionsType";
 
 const reducer = (state: Todo[] = [], action: AnyAction) => {
   switch (action.type) {

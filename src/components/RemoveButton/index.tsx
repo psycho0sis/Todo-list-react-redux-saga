@@ -1,20 +1,22 @@
 import { useDispatch } from "react-redux";
-import { removeTodo } from "../../store/actions";
+
+import { removeTodo } from "store/actions/actions";
+
 import "./style.scss";
 
 interface Props {
   id: number;
 }
 
-const RemoveButton: React.FC<Props> = ({ id }) => {
+export const RemoveButton: React.FC<Props> = ({ id }) => {
   const dispatch = useDispatch();
 
   const removeBtn = () => {
-    console.log(id);
     dispatch(removeTodo(id));
   };
+
   return (
-    <button type='button' className='todoItem__button' onClick={removeBtn}>
+    <button type='button' className='removeButton' onClick={removeBtn}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='30'
@@ -31,5 +33,3 @@ const RemoveButton: React.FC<Props> = ({ id }) => {
     </button>
   );
 };
-
-export default RemoveButton;

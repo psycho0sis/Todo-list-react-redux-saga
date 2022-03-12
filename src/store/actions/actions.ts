@@ -1,10 +1,12 @@
-import { Todo } from "./types";
+import { Todo } from "../types";
 
-export const GET_TODOS = "GET_TODO";
-export const ADD_TODO = "ADD_TODO";
-export const TOGGLE_TODO = "TOGGLE_TODO";
-export const REMOVE_TODO = "REMOVE_TODO";
-export const UPDATE_TODO = "UPDATE_TODO";
+import {
+  ADD_TODO,
+  GET_TODOS,
+  TOGGLE_TODO,
+  REMOVE_TODO,
+  UPDATE_TODO,
+} from "./actionsType";
 
 export function getTodos(payload: Todo[]) {
   return { type: GET_TODOS, payload };

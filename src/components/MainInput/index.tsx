@@ -1,20 +1,19 @@
 import { SetStateAction, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { addTodo } from "../../store/actions";
+import { addTodo } from "store/actions/actions";
 
-import { Todo } from "../../store/types";
+import { Todo } from "store/types";
 
 import "./style.scss";
 
-const MainInput = () => {
+export const MainInput = () => {
   const [value, setValue] = useState("");
+  const dispatch = useDispatch();
 
   const onChangeInput = (e: { target: { value: SetStateAction<string> } }) => {
     setValue(e.target.value);
   };
-
-  const dispatch = useDispatch();
 
   const addBtn = () => {
     const todo: Todo = {
@@ -26,6 +25,7 @@ const MainInput = () => {
     setValue("");
     dispatch(addTodo(todo));
   };
+
   return (
     <div className='mainInput'>
       <input
@@ -54,5 +54,3 @@ const MainInput = () => {
     </div>
   );
 };
-
-export default MainInput;
