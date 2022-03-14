@@ -5,7 +5,7 @@ import { MainInput } from "components/MainInput/";
 import { TodoList } from "components/TodoList";
 import { Spinner } from "components/Spinner";
 
-import { RootState } from "store/store";
+import { getFormattedTodos } from "store/selectors/getSelectTodos";
 
 import "./style.scss";
 
@@ -16,7 +16,7 @@ export const App = () => {
     dispatch({ type: "LOAD_DATA" });
   }, [dispatch]);
 
-  const todos = useSelector((state: RootState) => state.todos);
+  const todos = useSelector(getFormattedTodos);
 
   return (
     <div className='app'>
