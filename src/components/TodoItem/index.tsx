@@ -31,14 +31,14 @@ const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
 
   return (
     <li className={completed && !isEditing ? "todoItem completed" : "todoItem"}>
-      <div className=''>
+      <>
         <input
           className='todoItem__checkbox'
           type='checkbox'
           onChange={onToggleTodo}
           checked={completed}
         />
-      </div>
+      </>
       {content}
       <div className='todoItem__buttons'>
         {button}
