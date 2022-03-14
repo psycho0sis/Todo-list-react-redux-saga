@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Todo-list-react-redux-saga/static/css/main.eff5c339.chunk.css",
-    "main.js": "/Todo-list-react-redux-saga/static/js/main.8eb0852c.chunk.js",
-    "main.js.map": "/Todo-list-react-redux-saga/static/js/main.8eb0852c.chunk.js.map",
+    "main.js": "/Todo-list-react-redux-saga/static/js/main.f6215e33.chunk.js",
+    "main.js.map": "/Todo-list-react-redux-saga/static/js/main.f6215e33.chunk.js.map",
     "runtime-main.js": "/Todo-list-react-redux-saga/static/js/runtime-main.ebf1d426.js",
     "runtime-main.js.map": "/Todo-list-react-redux-saga/static/js/runtime-main.ebf1d426.js.map",
-    "static/js/2.a9687674.chunk.js": "/Todo-list-react-redux-saga/static/js/2.a9687674.chunk.js",
-    "static/js/2.a9687674.chunk.js.map": "/Todo-list-react-redux-saga/static/js/2.a9687674.chunk.js.map",
+    "static/js/2.32aee2a8.chunk.js": "/Todo-list-react-redux-saga/static/js/2.32aee2a8.chunk.js",
+    "static/js/2.32aee2a8.chunk.js.map": "/Todo-list-react-redux-saga/static/js/2.32aee2a8.chunk.js.map",
     "index.html": "/Todo-list-react-redux-saga/index.html",
     "static/css/main.eff5c339.chunk.css.map": "/Todo-list-react-redux-saga/static/css/main.eff5c339.chunk.css.map",
-    "static/js/2.a9687674.chunk.js.LICENSE.txt": "/Todo-list-react-redux-saga/static/js/2.a9687674.chunk.js.LICENSE.txt"
+    "static/js/2.32aee2a8.chunk.js.LICENSE.txt": "/Todo-list-react-redux-saga/static/js/2.32aee2a8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ebf1d426.js",
-    "static/js/2.a9687674.chunk.js",
+    "static/js/2.32aee2a8.chunk.js",
     "static/css/main.eff5c339.chunk.css",
-    "static/js/main.8eb0852c.chunk.js"
+    "static/js/main.f6215e33.chunk.js"
   ]
 }
