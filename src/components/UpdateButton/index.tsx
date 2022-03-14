@@ -2,9 +2,9 @@ import { IMouseEvent } from "types";
 
 import "styles.scss";
 
-export const UpdateButton: React.FC<IMouseEvent> = ({ toggleIsEditing }) => {
+export const UpdateButton: React.FC<IMouseEvent> = ({ onToggleIsEditing }) => {
   return (
-    <button type='button' className='button pink' onClick={toggleIsEditing}>
+    <button type='button' className='button pink' onClick={onToggleIsEditing}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='30'

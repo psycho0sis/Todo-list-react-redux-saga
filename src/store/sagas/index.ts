@@ -1,6 +1,7 @@
 import { call, fork, takeEvery, put } from "redux-saga/effects";
 
 import { GET_TODOS } from "store/actions/actionsTypes";
+import { ITodo } from "types";
 
 const getTodos = async () => {
   try {
@@ -9,7 +10,7 @@ const getTodos = async () => {
     );
     const data = await response.json();
 
-    return data;
+    return data.map((todo: ITodo) => ({ ...todo, isEditing: false }));
   } catch (error) {
     console.log(error);
   }

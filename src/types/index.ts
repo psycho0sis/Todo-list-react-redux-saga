@@ -1,3 +1,5 @@
+import { SetStateAction } from "react";
+
 export interface ITodo {
   title: string;
   completed: boolean;
@@ -16,5 +18,11 @@ export interface IId {
 }
 
 export interface IMouseEvent {
-  toggleIsEditing: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onToggleIsEditing: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export interface DispatchProps {
+  onToggleTodo: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onToggleIsEditing: () => void;
+  onUpdateTodo: (e: { target: { value: SetStateAction<string> } }) => void;
 }
