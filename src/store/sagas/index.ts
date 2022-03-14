@@ -8,17 +8,23 @@ const getTodos = async () => {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/todos/?_limit=6"
     );
-    const data = await response.json();
+    const data: Promise<Response> = await response.json();
 
-    return data.map((todo: ITodo) => ({ ...todo, isEditing: false }));
+    return data;
   } catch (error) {
     console.log(error);
   }
 };
 
 function* loadTodos() {
-  const todos: Promise<Response> = yield call(getTodos);
-  yield put({ type: GET_TODOS, payload: todos });
+  const todos: ITodo[] = yield call(getTodos);
+
+  const todoWithExtraData = todos.map((todo: ITodo) => ({
+    ...todo,
+    isEditing: false,
+  }));
+
+  yield put({ type: GET_TODOS, payload: todoWithExtraData });
 }
 
 function* worker() {
