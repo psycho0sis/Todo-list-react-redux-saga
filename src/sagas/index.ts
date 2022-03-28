@@ -1,13 +1,12 @@
 import { call, fork, takeEvery, put } from "redux-saga/effects";
 
-import { GET_TODOS } from "store/actions/actionsTypes";
+import { GET_TODOS } from "actions/actionsTypes";
 import { ITodo } from "types";
+import  {apiLink}  from "constants/links";
 
 const getTodos = async () => {
   try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos/?_limit=6"
-    );
+    const response = await fetch(apiLink);
     const data: Promise<Response> = await response.json();
 
     return data;

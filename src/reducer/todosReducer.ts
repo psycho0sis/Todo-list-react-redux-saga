@@ -8,7 +8,7 @@ import {
   TOGGLE_TODO,
   UPDATE_TODO,
   IS_EDIT,
-} from "store/actions/actionsTypes";
+} from "actions/actionsTypes";
 
 export const todosReducer = (state: ITodo[] = [], action: AnyAction) => {
   switch (action.type) {

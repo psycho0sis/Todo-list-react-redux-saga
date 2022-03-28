@@ -1,17 +1,13 @@
-import { Dispatch, SetStateAction } from "react";
-import { connect } from "react-redux";
-import { Action } from "redux";
-
 import { RemoveButton } from "components/RemoveButton";
 import { UpdateButton } from "components/UpdateButton/";
 import { SaveButton } from "components/SaveButton";
 
-import { toggleEditing, toggleTodo, updateTodo } from "store/actions/actions";
-import { ITodo, ITodoItem, DispatchProps } from "types";
+
+import { ITodoItem, DispatchProps } from "types";
 
 import "./style.scss";
 
-const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
+export const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
   onToggleTodo,
   onToggleIsEditing,
   onUpdateTodo,
@@ -47,21 +43,3 @@ const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
     </li>
   );
 };
-
-const mapDispatchToProps = (
-  dispatch: Dispatch<Action>,
-  key: { todo: ITodo }
-) => {
-  const id: number = key.todo.id;
-
-  return {
-    onToggleTodo: () => {
-      dispatch(toggleTodo(id));
-    },
-    onToggleIsEditing: () => dispatch(toggleEditing(id)),
-    onUpdateTodo: (e: { target: { value: SetStateAction<string> } }) =>
-      dispatch(updateTodo(id, e)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(TodoItem);
