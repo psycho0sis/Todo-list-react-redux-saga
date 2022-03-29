@@ -21,7 +21,7 @@ export interface IMouseEvent {
   onToggleIsEditing: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export interface DispatchProps {
+export interface IDispatchProps {
   onToggleTodo: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onToggleIsEditing: () => void;
   onUpdateTodo: (e: { target: { value: SetStateAction<string> } }) => void;

@@ -3,27 +3,17 @@ import { UpdateButton } from "components/UpdateButton/";
 import { SaveButton } from "components/SaveButton";
 
 
-import { ITodoItem, DispatchProps } from "types";
+import { ITodoItem, IDispatchProps } from "types";
 
 import "./style.scss";
 
-export const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
+export const TodoItem: React.FC<ITodoItem & IDispatchProps> = ({
   onToggleTodo,
   onToggleIsEditing,
   onUpdateTodo,
-  todo: { id, title, completed, isEditing },
+  todo
 }) => {
-  const content = isEditing ? (
-    <input className='todoItem__input' value={title} onChange={onUpdateTodo} />
-  ) : (
-    <p className='todoItem__text'>{title}</p>
-  );
-
-  const button = isEditing ? (
-    <SaveButton onToggleIsEditing={onToggleIsEditing} />
-  ) : (
-    <UpdateButton onToggleIsEditing={onToggleIsEditing} />
-  );
+  const { id, title, completed, isEditing } = todo;
 
   return (
     <li className={completed && !isEditing ? "todoItem completed" : "todoItem"}>
@@ -35,9 +25,17 @@ export const TodoItem: React.FC<ITodoItem & DispatchProps> = ({
           checked={completed}
         />
       </>
-      {content}
+      {isEditing ? (
+        <input className='todoItem__input' value={title} onChange={onUpdateTodo} />
+      ) : (
+        <p className='todoItem__text'>{title}</p>
+      )}
       <div className='todoItem__buttons'>
-        {button}
+        {isEditing ? (
+        <SaveButton onToggleIsEditing={onToggleIsEditing} />
+      ) : (
+        <UpdateButton onToggleIsEditing={onToggleIsEditing} />
+      )}
         <RemoveButton id={id} />
       </div>
     </li>
